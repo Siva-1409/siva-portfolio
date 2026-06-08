@@ -30,11 +30,30 @@ async function sendMessage() {
     document.getElementById("message").value = "";
 }
 
-async function loadProjects() {
+function loadProjects() {
 
-    const response = await fetch("/projects");
-
-    const projects = await response.json();
+    const projects = [
+        {
+            title: "Smart Plant Watering System",
+            description: "Automatic plant watering using sensors and IoT concepts.",
+            tech_stack: "Arduino, IoT"
+        },
+        {
+            title: "YOUR TRAVELLER SIVA",
+            description: "Travel and railway vlog YouTube channel with train reviews and journeys.",
+            tech_stack: "YouTube, Video Editing"
+        },
+        {
+            title: "RailOne Review Project",
+            description: "Guide and review project explaining RailOne app features.",
+            tech_stack: "Content Creation"
+        },
+        {
+            title: "Portfolio Website",
+            description: "Full Stack Portfolio Website built using HTML, CSS, JavaScript, Node.js and MySQL.",
+            tech_stack: "HTML, CSS, JavaScript, Node.js"
+        }
+    ];
 
     let html = "";
 
@@ -42,28 +61,16 @@ async function loadProjects() {
 
         html += `
         <div class="project-card">
-
             <h3>🚀 ${project.title}</h3>
-
             <p>${project.description}</p>
-
             <br>
-
             <div class="tags">
-
-                ${project.tech_stack
-                    .split(",")
-                    .map(tag =>
-                        `<span class="tag">${tag.trim()}</span>`
-                    )
-                    .join("")
-                }
-
+                ${project.tech_stack.split(",").map(tag =>
+                    `<span class="tag">${tag.trim()}</span>`
+                ).join("")}
             </div>
-
         </div>
         `;
-
     });
 
     document.getElementById("projects").innerHTML = html;
