@@ -541,34 +541,4 @@ min-height:220px;
 min-width:220px;
 display:inline-block;
 }
-@keyframes rotateAura{
-
-0%{
-transform:rotate(0deg);
-}
-
-100%{
-transform:rotate(360deg);
-}
-
-}
-
-@keyframes pulse{
-
-0%{
-box-shadow:
-0 0 30px #38bdf8;
-}
-
-50%{
-box-shadow:
-0 0 80px #38bdf8,
-0 0 140px #8b5cf6;
-}
-
-100%{
-box-shadow:
-0 0 30px #38bdf8;
-}
-
-}
+    
